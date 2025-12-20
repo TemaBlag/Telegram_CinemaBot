@@ -4,3 +4,4 @@ aiosqlite
 beautifulsoup4
 python-dotenv
 lxml
+curl_cffi
