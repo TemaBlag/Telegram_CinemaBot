@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import asyncio
 from aiogram.types import Message
 from utils import find_film
+from aiogram.client.session.aiohttp import AiohttpSession
 from data import (
     init_db, 
     log_search_query, 
@@ -13,7 +14,12 @@ from data import (
     get_user_stats
 )
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+PROXY_URL = os.getenv("PROXY_URL")
+
+session = AiohttpSession(proxy=PROXY_URL)
+
+BOT_TOKEN = os.getenv("BOT_TOKEN", session=session)
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
