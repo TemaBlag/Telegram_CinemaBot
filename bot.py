@@ -13,8 +13,6 @@ from data import (
     get_user_stats
 )
 
-load_dotenv()
-
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 bot = Bot(token=BOT_TOKEN)
