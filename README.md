@@ -6,7 +6,7 @@
 
 **CinemaBot** — это быстрый и удобный Telegram-бот для поиска фильмов и сериалов. Бот работает полностью асинхронно, парсит информацию с популярных кино-сайтов в реальном времени и ведет персональную статистику для каждого пользователя.
 
-Тэг в телеграмме: @ThisIsBestCinemaBot
+[![Telegram Bot](https://img.shields.io/badge/Telegram-Start_Bot-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ThisIsBestCinemaBot)
 
 ---
 
@@ -54,15 +54,6 @@ python -m venv venv
 ```bash
 pip install -r requirements.txt
 ```
-> **Примечание:** Если у вас нет файла `requirements.txt`, создайте его с таким содержимым:
-> ```text
-> aiogram
-> aiohttp
-> aiosqlite
-> beautifulsoup4
-> lxml
-> python-dotenv
-> ```
 
 ### 4. Настройте переменные окружения
 Создайте файл `.env` в корне проекта и добавьте туда свои данные:
