@@ -1,6 +1,7 @@
 import aiohttp
 import os
 from urllib.parse import quote
+import os
 from utils import parse_kinogo_html, prepare_telegram_response
 from curl_cffi.requests import AsyncSession 
 
@@ -14,7 +15,7 @@ async def find_film(film_name: str) -> list[dict] | str:
     search_url: str = create_url(film_name)
     async with AsyncSession(impersonate="chrome", proxy=PROXY_URL) as session:
         try:
-            response = await session.get(search_url)
+            response = await session.get(search_url, timeout=15)
             if response.status_code != 200:
                 return f"❌ Сайт вернул ошибку: {response.status_code}"
             html_content = response.text 
