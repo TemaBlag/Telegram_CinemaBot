@@ -5,15 +5,13 @@ import os
 from utils import parse_kinogo_html, prepare_telegram_response
 from curl_cffi.requests import AsyncSession 
 
-PROXY_URL = os.getenv("PROXY_URL")
-
 def create_url(film_name: str) -> str:
     encoded_film_name: str = quote(film_name)
     return f"https://kinogo.ec/index.php?do=search&subaction=search&story={encoded_film_name}"
 
 async def find_film(film_name: str) -> list[dict] | str:
     search_url: str = create_url(film_name)
-    async with AsyncSession(impersonate="chrome", proxy=PROXY_URL) as session:
+    async with AsyncSession(impersonate="chrome") as session:
         try:
             response = await session.get(search_url, timeout=15)
             if response.status_code != 200:
