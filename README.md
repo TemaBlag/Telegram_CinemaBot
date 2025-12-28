@@ -1,45 +1,48 @@
 # 🎬 CinemaBot
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat&logo=python)
-![Aiogram](https://img.shields.io/badge/Aiogram-3.x-blueviolet?style=flat&logo=telegram)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat\&logo=python)
+![Aiogram](https://img.shields.io/badge/Aiogram-3.x-blueviolet?style=flat\&logo=telegram)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-**CinemaBot** — это быстрый и удобный Telegram-бот для поиска фильмов и сериалов. Бот работает полностью асинхронно, парсит информацию с популярных кино-сайтов в реальном времени и ведет персональную статистику для каждого пользователя.
+**CinemaBot** is a fast and user-friendly Telegram bot for searching movies and TV shows.
+It is fully asynchronous, parses data from popular cinema websites in real time, and maintains personalized statistics for each user.
 
-[![Telegram Bot](https://img.shields.io/badge/Telegram-Start_Bot-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ThisIsBestCinemaBot)
-
----
-
-## ✨ Возможности
-
-*   🚀 **Полная асинхронность:** Использует `aiogram` и `aiohttp` для мгновенного ответа без блокировок.
-*   🔍 **Живой поиск:** Парсинг результатов с сайта Kinogo (или аналогов) с помощью `BeautifulSoup4`.
-*   📊 **База данных:** Сохранение истории поиска и статистики запросов в `SQLite` (`aiosqlite`).
-*   🛡 **Обход защиты:** Имитация реального браузера (User-Agent) для успешного парсинга.
-*   📱 **Удобный интерфейс:** Красивое форматирование сообщений (Markdown) и чистые ссылки.
-
-## 🛠 Технический стек
-
-*   **Язык:** Python 3.10+
-*   **Telegram API:** [aiogram 3.x](https://docs.aiogram.dev/)
-*   **HTTP-клиент:** [aiohttp](https://docs.aiohttp.org/)
-*   **Парсинг:** [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) + [lxml](https://lxml.de/)
-*   **База данных:** [aiosqlite](https://github.com/omnilib/aiosqlite)
-*   **Конфигурация:** [python-dotenv](https://pypi.org/project/python-dotenv/)
+[![Telegram Bot](https://img.shields.io/badge/Telegram-Start_Bot-2CA5E0?style=for-the-badge\&logo=telegram\&logoColor=white)](https://t.me/ThisIsBestCinemaBot)
 
 ---
 
-## ⚙️ Установка и запуск
+## ✨ Features
 
-Следуйте этим шагам, чтобы развернуть бота на своем компьютере или сервере.
+* 🚀 **Fully asynchronous:** Built with `aiogram` and `aiohttp` for instant, non-blocking responses.
+* 🔍 **Live search:** Real-time parsing of results from Kinogo (or similar websites) using `BeautifulSoup4`.
+* 📊 **Database:** Stores search history and query statistics in `SQLite` via `aiosqlite`.
+* 🛡 **Anti-bot bypass:** Mimics a real browser (User-Agent) to ensure successful parsing.
+* 📱 **User-friendly interface:** Clean message formatting (Markdown) and tidy links.
 
-### 1. Клонируйте репозиторий
+## 🛠 Tech Stack
+
+* **Language:** Python 3.10+
+* **Telegram API:** [aiogram 3.x](https://docs.aiogram.dev/)
+* **HTTP client:** [aiohttp](https://docs.aiohttp.org/)
+* **Parsing:** [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) + [lxml](https://lxml.de/)
+* **Database:** [aiosqlite](https://github.com/omnilib/aiosqlite)
+* **Configuration:** [python-dotenv](https://pypi.org/project/python-dotenv/)
+
+---
+
+## ⚙️ Installation & Run
+
+Follow these steps to deploy the bot locally or on a server.
+
+### 1. Clone the repository
+
 ```bash
 git clone https://github.com/your-username/cinemabot.git
 cd cinemabot
 ```
 
-### 2. Создайте виртуальное окружение
+### 2. Create a virtual environment
+
 ```bash
 # macOS / Linux
 python3 -m venv venv
@@ -50,35 +53,34 @@ python -m venv venv
 .\venv\Scripts\activate
 ```
 
-### 3. Установите зависимости
+### 3. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Настройте переменные окружения
-Создайте файл `.env` в корне проекта и добавьте туда свои данные:
+### 4. Configure environment variables
+
+Create a `.env` file in the project root and add your credentials:
 
 ```env
-BOT_TOKEN=ващ_токен_от_BotFather
-WEB_SITE_SEARCH=https://kinogo.ec/search/
-DB_PATH=data/bot.db
+BOT_TOKEN=your_bot_token_from_BotFather
 ```
 
-### 5. Запустите бота
+### 5. Run the bot
+
 ```bash
 python bot.py
 ```
 
 ---
 
-## 🤖 Команды бота
+## 🤖 Bot Commands
 
-| Команда | Описание |
-| :--- | :--- |
-| `/start` | Приветствие и начало работы |
-| `/help` | Справка по использованию |
-| `/history` | Показать последние 5 поисковых запросов |
-| `/stats` | Показать топ-5 самых частых запросов |
-| **Текст** | Просто отправьте название фильма для поиска |
-
----
+| Command    | Description                              |
+| :--------- | :--------------------------------------- |
+| `/start`   | Start the bot and show a welcome message |
+| `/help`    | Display usage instructions               |
+| `/history` | Show the last 5 search queries           |
+| `/stats`   | Show the top 5 most frequent queries     |
+| **Text**   | Send a movie or TV show title to search  |
